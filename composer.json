@@ -1,0 +1,21 @@
+{
+  "name": "tzlion/neodb",
+  "description": "small mysqli wrapper",
+  "version": "0.1.0",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "taizou",
+      "homepage": "https://github.com/tzlion"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "TzLion\\NeoDb\\": ""
+    }
+  },
+  "require": {
+    "php": ">=5.4",
+    "ext-mysqli": "*"
+  }
+}
