@@ -17,12 +17,13 @@ class NeoDb
     private $queryCount;
     private $printQueries;
 
-    public function __construct($host, $username, $password, $dbName, $charset = "utf8mb4", $debugPrintQueries = false)
+    public function __construct($host, $username, $password, $dbName, $charset = "utf8mb4", $debugPrintQueries = false,
+                                $port = null, $socket = null)
     {
         $this->driver = new \mysqli_driver();
         $this->driver->report_mode = MYSQLI_REPORT_ALL &~ MYSQLI_REPORT_INDEX;
 
-        $this->dbh = new \mysqli($host, $username, $password, $dbName);
+        $this->dbh = new \mysqli($host, $username, $password, $dbName, $port, $socket);
         $this->dbh->query("SET NAMES $charset");
 
         $this->printQueries = $debugPrintQueries;
